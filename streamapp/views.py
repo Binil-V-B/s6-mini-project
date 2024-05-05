@@ -5,7 +5,7 @@ from streamapp.camera import VideoCamera #, LiveWebCam
 
 
 def vid(request):
-	return render(request, 'streamapp/home.html')
+	return render(request, 'streamapp/video.html')
 
 
 def gen(camera):
