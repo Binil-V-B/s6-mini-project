@@ -5,7 +5,7 @@ import cvzone
 
 width = 105
 height = 48
-with open("car_positions",'rb') as f:
+with open("parking/car_positions",'rb') as f:
 	posList=pickle.load(f)
 	
 
