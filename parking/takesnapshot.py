@@ -6,7 +6,7 @@ cap = cv2.VideoCapture(1)
 ret,frame = cap.read()
 
 try:
-    cv2.imwrite("screenshot.png",frame)
+    cv2.imwrite("parking/screenshot.png",frame)
     print("Screenshot was succesfully captured")
 except:
     print("screenshot not captured")
