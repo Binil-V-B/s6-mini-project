@@ -48,8 +48,8 @@ class VideoCamera(object):
 		imgDilate = cv2.dilate(imgMedian,kernal,iterations=1)
 		self.checkParkingSpaces(imgDilate)
 		
-		frame_flip = cv2.flip(self.image,1)
-		ret, jpeg = cv2.imencode('.jpg', frame_flip)
+		# frame_flip = cv2.flip(self.image,2)
+		ret, jpeg = cv2.imencode('.jpg', self.image)
 		return jpeg.tobytes()
 
 
