@@ -1,10 +1,10 @@
 import cv2
 import pickle
 
-img = cv2.imread("D:\github\Django_VideoStream\parking\screenshot.png")
+img = cv2.imread("screenshot.png")
 
 try: # check whether the car_positions file is available, if available load the posList
-    with open('D:\github\Django_VideoStream\car_positions','rb') as f:
+    with open('car_positions','rb') as f:
         posList=pickle.load(f)
 except: # if car_positions is not present then an empty list is created
     posList=[]
@@ -22,12 +22,12 @@ def mouseClick(events, x, y, flags,args):
             if x1<x<x1+width and y1<y<y1+height:
                 posList.pop(i)
 
-    with open('D:\github\Django_VideoStream\car_positions','wb') as f: # used to save the rectangle to a file
+    with open('car_positions','wb') as f: # used to save the rectangle to a file
         pickle.dump(posList,f)
 
 
 while True:
-    img=cv2.imread("D:\github\Django_VideoStream\parking\screenshot.png") # we are reloading the image everytime so that we are able to delete rectangle with right clicks
+    img=cv2.imread("screenshot.png") # we are reloading the image everytime so that we are able to delete rectangle with right clicks
     for pos in posList:
         cv2.rectangle(img,pos,(pos[0]+width,pos[1]+height), (255, 0, 0), 2)
     cv2.imshow("image", img)
