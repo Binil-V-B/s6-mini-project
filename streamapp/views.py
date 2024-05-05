@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.http.response import StreamingHttpResponse
+# from django.http import HttpResponse
 from streamapp.camera import VideoCamera #, LiveWebCam
 # Create your views here.
+
+def index(request):
+	return render(request,'login/main.html')
 
 
 def vid(request):
