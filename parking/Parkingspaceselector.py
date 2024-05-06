@@ -9,8 +9,8 @@ try: # check whether the car_positions file is available, if available load the 
 except: # if car_positions is not present then an empty list is created
     posList=[]
 
-width = 105
-height = 48
+width = 175
+height = 90
 
 
 def mouseClick(events, x, y, flags,args):
