@@ -1,11 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+import datetime
 from django.http.response import StreamingHttpResponse
 # from django.http import HttpResponse
 from streamapp.camera import VideoCamera #, LiveWebCam
+from .models import user
 # Create your views here.
 
 def index(request):
-	return render(request,'login/main.html')
+	if request.method=='POST':
+		user_name=request.POST.get('u_name')
+		phone_number=request.POST.get('ph_no')
+		vehicle_reg_no=request.POST.get('veh_no')
+		time=datetime.datetime.now()
+		user_new=user.objects.create(name=user_name,phone_no=phone_number,vehicle_reg_no=vehicle_reg_no,login_time=time)
+		user_new.save()
+		return redirect('video')
+	else:
+		return render(request,'login/main.html')
 
 
 def vid(request):

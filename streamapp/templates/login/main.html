@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="{% url 'video' %}"><button>login</button></a>
+    <form method="post">
+        {% csrf_token %}
+        <label>name</label><br>
+        <input type="text" name="u_name"><br>
+        <label>phone number</label><br>
+        <input type="number" name="ph_no"><br>
+        <label>vehicle reg number</label><br>
+        <input type="text" name="veh_no"><br>
+        <button type="submit">submit</button>
+    </form>
 </body>
 </html>
