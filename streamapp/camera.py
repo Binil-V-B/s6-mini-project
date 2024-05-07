@@ -23,12 +23,13 @@ class VideoCamera(object):
 			imgCrop=imgpro[y:y+height,x:x+width]
 			# cv2.imshow(str(x*y),imgCrop)
 			count=cv2.countNonZero(imgCrop)
-			cvzone.putTextRect(self.image,str(count),(x,y+height-5),scale=1.5,thickness=2,offset=0) #used to display the text on the feed
+			# cvzone.putTextRect(self.image,str(count),(x,y+height-5),scale=1.5,thickness=2,offset=0) #used to display the text on the feed
 			if count<600:# when the no of pixels in a crop area is low, there might not be a car present there
 				colour=(0,255,0)
 			else:
 				colour=(0,0,255)
 			cv2.rectangle(self.image, pos, (pos[0] + width, pos[1] + height), colour, 2)
+
 
 	def __del__(self):
 		self.cap.release()
