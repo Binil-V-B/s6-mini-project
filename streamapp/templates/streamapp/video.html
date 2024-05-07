@@ -1,12 +1,17 @@
 {% load static %}
-<html>
-  <head>
-    <link rel="stylesheet" href="{% static 'video/style.css' %}">
-    <title>Video Live Stream</title>
-  </head>
-  <body>
-    <h1>Video Live Stream</h1>
-    <img src="{% url 'video_feed' %}" alt="video feed" style="width:100%;">
-    <h1>©️Coder sQuad</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="{% static 'login/style.css' %}" type="text/css" rel="stylesheet"> -->
+    <title></title>
+
+</head>
+<body style=" background-image:url({% static 'video/grid.jpg'%});" >
+    <h1 style="text-align: center; color: antiquewhite;font-weight: bold;">VIDEO LIVE STREAM</h1><br>
+    <img style="width: 100%;" src="{% url 'video_feed' %}" alt="">
+    <h3 style="color: white;">©️Coder sQuad</h3>
+</body>
 </html>
